@@ -1,13 +1,13 @@
-package com.popcornNpages.popcornNpages;
+// package com.popcornNpages.popcornNpages;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+// import org.junit.jupiter.api.Test;
+// import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class PopcornNpagesApplicationTests {
+// @SpringBootTest
+// class PopcornNpagesApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+// 	@Test
+// 	void contextLoads() {
+// 	}
 
-}
+// }

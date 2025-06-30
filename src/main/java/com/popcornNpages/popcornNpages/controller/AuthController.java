@@ -1,0 +1,31 @@
+package com.popcornNpages.popcornNpages.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.popcornNpages.popcornNpages.dto.LoginRequest;
+import com.popcornNpages.popcornNpages.dto.RegisterRequest;
+import com.popcornNpages.popcornNpages.services.AuthService;
+
+
+@RestController
+public class AuthController {
+    
+    @Autowired
+    AuthService authService;
+
+    @PostMapping("/auth/register")
+    public String registerUser(@RequestBody RegisterRequest user){
+        authService.registerUser(user);
+        return "User Registered " + user.getEmail();
+    }
+
+    @PostMapping("/auth/login")
+    public ResponseEntity<String> userlogin(@RequestBody LoginRequest login ){
+        ResponseEntity<String> res = authService.userLogin(login);
+        return res;
+    }
+}
