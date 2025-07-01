@@ -8,10 +8,10 @@
 		<version>3.5.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.popcornNpages</groupId>
-	<artifactId>popcornNpages</artifactId>
+	<groupId>com.AuthService</groupId>
+	<artifactId>AuthService</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>popcornNpages</name>
+	<name>AuthService</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>

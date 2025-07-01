@@ -1,9 +1,9 @@
-package com.popcornNpages.popcornNpages.repository;
+package com.popcornNpages.AuthService.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.popcornNpages.popcornNpages.model.User;
+import com.popcornNpages.AuthService.model.User;
 
 
 

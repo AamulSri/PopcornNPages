@@ -1,4 +1,4 @@
-package com.popcornNpages.popcornNpages.config;
+package com.popcornNpages.AuthService.config;
 
 import java.io.IOException;
 
@@ -11,8 +11,8 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.popcornNpages.popcornNpages.repository.UserRepository;
-import com.popcornNpages.popcornNpages.utility.JWTUtility;
+import com.popcornNpages.AuthService.repository.UserRepository;
+import com.popcornNpages.AuthService.utility.JWTUtility;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

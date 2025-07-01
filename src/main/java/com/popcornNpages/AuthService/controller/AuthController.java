@@ -1,4 +1,4 @@
-package com.popcornNpages.popcornNpages.controller;
+package com.popcornNpages.AuthService.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -6,9 +6,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.popcornNpages.popcornNpages.dto.LoginRequest;
-import com.popcornNpages.popcornNpages.dto.RegisterRequest;
-import com.popcornNpages.popcornNpages.services.AuthService;
+import com.popcornNpages.AuthService.dto.LoginRequest;
+import com.popcornNpages.AuthService.dto.LoginResponse;
+import com.popcornNpages.AuthService.dto.RegisterRequest;
+import com.popcornNpages.AuthService.services.AuthService;
 
 
 @RestController
@@ -24,8 +25,8 @@ public class AuthController {
     }
 
     @PostMapping("/auth/login")
-    public ResponseEntity<String> userlogin(@RequestBody LoginRequest login ){
-        ResponseEntity<String> res = authService.userLogin(login);
-        return res;
+    public ResponseEntity<LoginResponse> userlogin(@RequestBody LoginRequest login ){
+      return  authService.userLogin(login);
+     
     }
 }

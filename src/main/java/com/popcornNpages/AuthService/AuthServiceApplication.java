@@ -1,13 +1,13 @@
-package com.popcornNpages.popcornNpages;
+package com.popcornNpages.AuthService;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PopcornNpagesApplication {
+public class AuthServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PopcornNpagesApplication.class, args);
+		SpringApplication.run(AuthServiceApplication.class, args);
 	}
 
 }

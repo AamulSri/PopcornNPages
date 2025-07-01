@@ -1,4 +1,4 @@
-package com.popcornNpages.popcornNpages.utility;
+package com.popcornNpages.AuthService.utility;
 
 
 import org.springframework.context.annotation.Configuration;

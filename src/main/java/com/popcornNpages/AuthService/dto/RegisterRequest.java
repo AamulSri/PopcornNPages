@@ -1,4 +1,4 @@
-package com.popcornNpages.popcornNpages.dto;
+package com.popcornNpages.AuthService.dto;
 
 import lombok.*;
 

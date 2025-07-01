@@ -1,4 +1,4 @@
-package com.popcornNpages.popcornNpages.services;
+package com.popcornNpages.AuthService.services;
 
 import java.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,15 +7,18 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.popcornNpages.popcornNpages.dto.LoginRequest;
-import com.popcornNpages.popcornNpages.dto.RegisterRequest;
-import com.popcornNpages.popcornNpages.model.User;
-import com.popcornNpages.popcornNpages.model.enums.Role;
-import com.popcornNpages.popcornNpages.repository.UserRepository;
-import com.popcornNpages.popcornNpages.utility.JWTUtility;
-import com.popcornNpages.popcornNpages.utility.PasswordHashingAndComparision;
+import com.popcornNpages.AuthService.dto.LoginRequest;
+import com.popcornNpages.AuthService.dto.LoginResponse;
+import com.popcornNpages.AuthService.dto.RegisterRequest;
+import com.popcornNpages.AuthService.model.User;
+import com.popcornNpages.AuthService.model.enums.Role;
+import com.popcornNpages.AuthService.repository.UserRepository;
+import com.popcornNpages.AuthService.utility.JWTUtility;
+import com.popcornNpages.AuthService.utility.PasswordHashingAndComparision;
+
 
 @Service
+
 public class AuthService {
 
     @Autowired
@@ -26,6 +29,7 @@ public class AuthService {
 
     @Autowired
     JWTUtility jwtUtility;
+
 
     private final BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
    
@@ -40,12 +44,16 @@ public class AuthService {
 
     }
 
-    public ResponseEntity<String> userLogin(LoginRequest login) {
+    public ResponseEntity<LoginResponse> userLogin(LoginRequest login) {
+        LoginResponse loginResponse = new LoginResponse();
        User user  =  userRepository.findByEmail(login.getEmail());
        if(user!=null && passwordHashingAndComparision.verfiyPassword(login.getPassword(), user.getPassword())){
-        String token = jwtUtility.generateToken(user.getEmail());
-        return ResponseEntity.ok("Login sucessful with JWT TOKEN" + token);
+        loginResponse.setToken(jwtUtility.generateToken(user.getEmail()));
+        return ResponseEntity.ok(loginResponse);
        }
-       return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid Credentials");
+       /*HttpStatus.UNAUTHORIZED = 401 status code.
+       .body() returns an error msg  */
+       loginResponse.setErrorMessage("Invalid Credentials");
+       return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(loginResponse);
     }
 }

@@ -1,4 +1,4 @@
-package com.popcornNpages.popcornNpages.config;
+package com.popcornNpages.AuthService.config;
 
 import java.util.Collection;
 import java.util.List;
@@ -7,7 +7,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.popcornNpages.popcornNpages.model.User;
+import com.popcornNpages.AuthService.model.User;
 
 import lombok.AllArgsConstructor;
 

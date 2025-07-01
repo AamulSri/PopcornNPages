@@ -1,9 +1,11 @@
-package com.popcornNpages.popcornNpages.model;
+package com.popcornNpages.AuthService.model;
 
 import jakarta.persistence.Column;
 import org.hibernate.annotations.CreationTimestamp;
-import com.popcornNpages.popcornNpages.model.enums.Role;
 import org.hibernate.annotations.UpdateTimestamp;
+
+import com.popcornNpages.AuthService.model.enums.Role;
+
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Entity;
